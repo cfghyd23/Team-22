@@ -1,8 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 export default function Login(){
 
-    
+    const URL = `http://localhost:${3001}`;
+
+    const [formData, setFormData] = useState({email:'', Password:''});
+
+    const submitLogin = async () => {
+      await axios.post(`${URL}/users/login`, formData)
+    .then((res) => {
+      if (res.data.success) {
+          console.log(res.data);
+          localStorage.setItem('userId', res.data.userID);
+          // props.handleLogin(res.data.userID);
+          // navigate('/');
+      } else {
+        alert('Invalid Credentials');
+      }
+    })
+    .catch((err) => console.log(err.message));
+  }
+
+  const handleChange = (event) => {
+    const {name, value} = event.target;
+    setFormData(prev => ({
+        ...prev,
+        [name]: value
+    }));
+
+    console.log(formData);
+}
+
+React.useEffect(() => {
+  console.log(formData);
+}, [formData])
 
     return(
         <div>
@@ -24,7 +56,7 @@ export default function Login(){
                     <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                     <label className="form-label" for="form3Example1c">Email</label>
-                      <input type="text" id="form3Example1c" className="form-control" />
+                      <input type="text" id="form3Example1c" className="form-control" onChange={handleChange} name="email" value={formData.email}/>
                     </div>
                   </div>
 
@@ -34,13 +66,13 @@ export default function Login(){
                     <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                     <label className="form-label" for="form3Example4c">Password</label>
-                    <input type="password" id="form3Example4c" className="form-control" />
+                    <input type="password" id="form3Example4c" className="form-control" onChange={handleChange} value={formData.Password} name="Password"/>
                     </div>
                   </div>
 
 
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" className="btn btn-primary btn-lg">Login</button>
+                    <button type="button" className="btn btn-primary btn-lg" onClick={submitLogin}>Login</button>
                   </div>
 
                 </form>

@@ -10,14 +10,14 @@ exports.getAllusers = async (req, res) => {
 }
 
 exports.login = async (req, res) => {
-    const { email, password } = req.body;
+    const { email, Password } = req.body;
 
     try {
       const oldUser = await User.findOne({ email });
   
       if (!oldUser) return res.status(200).json({ success: false });
   
-      const isPasswordCorrect = await bcrypt.compare(password, oldUser.password);
+      const isPasswordCorrect = await bcrypt.compare(Password, oldUser.Password);
   
       if (!isPasswordCorrect) return res.status(200).json({ success: false });
       res.status(200).send({success: true, userID: oldUser._id});
