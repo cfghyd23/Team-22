@@ -22,7 +22,6 @@ const userSchema = new mongoose.Schema({
     name: String,
     dob: Date,
     bloodGroup: String,
-    weight: Number,
     sex: String,
     Password: String,
     admin: Boolean,

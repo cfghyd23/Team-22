@@ -36,7 +36,7 @@ exports.register = async (req, res) => {
 
     console.log(req.body);
 
-    const { email, name, mobile, Password, dob, bloodGroup, weight, sex} = req.body;
+    const { email, name, mobile, Password, dob, bloodGroup, sex} = req.body;
 
     let oldUser = null;
 
@@ -62,7 +62,6 @@ exports.register = async (req, res) => {
         Password: hashedPassword,
         dob,
         bloodGroup,
-        weight,
         sex,
         donor: 0,
         patient: 0

@@ -7,7 +7,7 @@ import DonorChecklist from './DonorChecklist';
 
 function App() {
   return (
-    <DonorChecklist/>
+    <Form/>
   );
 }
 

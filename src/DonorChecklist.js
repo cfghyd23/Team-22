@@ -8,15 +8,11 @@ export default function DonorChecklist(){
     <div>
     <h2>Blood Donation Pre-Donation Checklist</h2>
     <form>
-    <label for="age">Age:</label>
-    <input type="number" id="age" name="age" min="1" required></input><br></br>
         <label for="age">Weight:</label>
     <input type="number" id="age" name="age" min="50" required></input><br></br>
     
     <label for="lastDonation">Last Donation (in months):</label>
     <input type="number" id="lastDonation" name="lastDonation" min="0" required></input><br></br>
-    <label for="lastDonation">Acceptable Hemoglobin(in gms):</label>
-    <input type="number" id="lastDonation" name="lastDonation" min="12.5" required></input><br></br>
         <input type="checkbox" id="checklist1" name="checklist" value="checklist1"></input>
         <label for="checklist1">No fever or illness in the last week</label><br></br>
         
@@ -33,7 +29,7 @@ export default function DonorChecklist(){
         <label for="checklist5">Not received a blood transfusion in the past 6 months</label><br></br>
         
         
-        <input type="submit" value="Check Eligibility"></input>
+        <input type="submit" value="Submit Request"></input>
     </form>
     </div>
     </center>

@@ -12,10 +12,9 @@ export default function Form(){
     confirmPass:'',
     name:'',
     mobile:'',
-    bloodGroup:'',
+    bloodGroup:'Apos',
     dob:'',
-    weight:'',
-    sex:'',
+    sex:'Male',
   })
 
   // const useNavigate = useNavigate();
@@ -124,14 +123,6 @@ export default function Form(){
                         <option value="ABpos">AB+</option>
                         <option value="ABneg">AB-</option>
                       </select>
-                    </div>
-                  </div>
-
-                  <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-key fa-lg me-3 fa-fw"></i>
-                    <div className="form-outline flex-fill mb-0">
-                    <label className="form-label" for="form3Example4cd">Weight</label>
-                      <input name="weight" type="number" id="form3Example4cf" className="form-control" value={formData.weight} onChange={handleChange}/>
                     </div>
                   </div>
 
