@@ -47,7 +47,12 @@ export default function Form(){
         ...oldData,
         [name]: value
     }))
+    console.log(name, value);
   }
+
+  React.useEffect(() => {
+    console.log(formData);
+  },[formData])
 
     return(
         <div>
