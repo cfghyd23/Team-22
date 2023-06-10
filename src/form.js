@@ -4,7 +4,7 @@ export default function Form(){
     return(
         <div>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
-            <section className="vh-100" style={{backgroundColor: '#92a8d1'}}>
+            <section  style={{backgroundColor: '#92a8d1'}}>
   <div className="container h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-lg-12 col-xl-11">
@@ -24,21 +24,42 @@ export default function Form(){
                       <input type="text" id="form3Example1c" className="form-control" />
                     </div>
                   </div>
+                  <div className="d-flex flex-row align-items-center mb-4">
+                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div className="form-outline flex-fill mb-0">
+                    <label className="form-label" for="form3Example1c">Mobile</label>
+                      <input type="text" id="form3Example1c" className="form-control" />
+                    </div>
+                  </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
-                      <label className="form-label" for="form3Example3c">Your Email</label>
+                      <label className="form-label" for="form3Example3c">Email</label>
                       <input type="email" id="form3Example3c" className="form-control" />
                       
                     </div>
                   </div>
-
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
-                    <label className="form-label" for="form3Example4c">Password</label>
-                    <input type="password" id="form3Example4c" className="form-control" />
+                    <label className="form-label" for="form3Example1c">Weight</label>
+                      <input type="text" id="form3Example1c" className="form-control" />
+                    </div>
+                  </div>
+                  
+                  <div className="d-flex flex-row align-items-center mb-4">
+                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div className="form-outline flex-fill mb-0">
+                    <label className="form-label" for="form3Example1c">Gender</label>
+                    
+                      
+                      <label for="Male">Male</label>
+                      <input type="radio" id="form3Example1c" className="form-control" />
+                      
+                      <label for="Female">Female</label>
+                      <input type="radio" id="form3Example1c" className="form-control" />
+
                     </div>
                   </div>
 
@@ -49,6 +70,8 @@ export default function Form(){
                     <input type="password" id="form3Example4c" className="form-control" />
                     </div>
                   </div>
+
+                 
 
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-key fa-lg me-3 fa-fw"></i>
