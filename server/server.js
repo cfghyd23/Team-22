@@ -20,6 +20,7 @@ connection.once('open', () => {
     console.log('Mongoose database is connected succesfully');
 })
 
+app.use(morgan("dev"))
 app.use(cors());
 app.use(express.json());
 

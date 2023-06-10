@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
     dob: Date,
     bloodGroup: String,
     weight: Number,
-    gender: String,
+    sex: String,
     password: String,
     admin: Boolean,
     donor: Number, /*0 for not donor,1 for wants to donate/pending,2 for approved donor*/ 

@@ -34,7 +34,9 @@ exports.register = async (req, res) => {
         return;
     }
 
-    const { email, name, mobile, Password, dob, bloodGroup, weight, Gender} = req.body;
+    console.log(req.body);
+
+    const { email, name, mobile, Password, dob, bloodGroup, weight, sex} = req.body;
 
     let oldUser = null;
 
@@ -59,7 +61,7 @@ exports.register = async (req, res) => {
         dob,
         bloodGroup,
         weight,
-        Gender,
+        sex,
         donor: 0,
         patient: 0
     });

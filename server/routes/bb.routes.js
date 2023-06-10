@@ -7,3 +7,5 @@ router.get('/',controller.getAllBloodBanks);
 router.get('/:id',controller.getBloodBank);
 router.get('/register',controller.register);
 router.get('/login',controller.login);
+
+module.exports = router;
