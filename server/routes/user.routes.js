@@ -12,5 +12,8 @@ router.post('/donor-request',controller.donorRequest);
 router.post('/patient-request',controller.patientRequest);
 router.post('/approve-donor',controller.approveDonor);
 router.post('/approve-patient',controller.approvePatient);
+router.post('/delete-user',controller.deleteUser);
+router.post('/remove-patient',controller.removePatient);
+router.post('/remove-donor',controller.removeDonor);
 
 module.exports = router;

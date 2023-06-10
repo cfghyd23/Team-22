@@ -181,3 +181,54 @@ exports.approvePatient = async(req,res)=>{
     if (!oldUser) return res.status(200).json({ success: false });
         return res.status(200).json({...oldUser,success:true});
 }
+
+exports.deleteUser = async(req,res)=>{
+    if (!req.body) {
+        res.status(400).send({ message: "Cannot be empty!" });
+        return;
+    }
+
+    const {mobile} = req.body;
+
+    let oldUser = null;
+    await User.findOneAndDelete({mobile:mobile})
+    .then(data => {
+        oldUser = data;
+    });
+    if (!oldUser) return res.status(200).json({ success: false });
+        return res.status(200).json({...oldUser,success:true});
+}
+
+exports.removePatient = async(req,res)=>{
+    if (!req.body) {
+        res.status(400).send({ message: "Cannot be empty!" });
+        return;
+    }
+
+    const {mobile} = req.body;
+
+    let oldUser = null;
+    await User.findOneAndUpdate({mobile},{patient:0})
+    .then(data => {
+        oldUser = data;
+    });
+    if (!oldUser) return res.status(200).json({ success: false });
+        return res.status(200).json({...oldUser,success:true});
+}
+
+exports.removeDonor = async(req,res)=>{
+    if (!req.body) {
+        res.status(400).send({ message: "Cannot be empty!" });
+        return;
+    }
+
+    const {mobile} = req.body;
+
+    let oldUser = null;
+    await User.findOneAndUpdate({mobile},{donor:0})
+    .then(data => {
+        oldUser = data;
+    });
+    if (!oldUser) return res.status(200).json({ success: false });
+        return res.status(200).json({...oldUser,success:true});
+}
