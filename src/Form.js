@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import axios from "axios"
+// import axios from "axios"
 // import {useNavigate, Link} from "react-router-dom"
 
 export default function Form(){
@@ -28,7 +28,7 @@ export default function Form(){
         return;
     }
 
-    await axios.post(`${URL}/users`, formData);
+    // await axios.post(`${URL}/users`, formData);
 
     // history.push('/all-staff');
 
