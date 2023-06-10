@@ -71,7 +71,7 @@ exports.register = async (req, res) => {
 
 exports.getBloodBank = async (req,res)=>{
     const {id} = req.params;
-    const oldUser = null;
+    let oldUser = null;
     await bloodBanks.findById(id)
         .then(data => {
             oldUser = data;

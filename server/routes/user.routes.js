@@ -8,6 +8,9 @@ router.get('/patients', controller.getAllPatients);
 router.get('/donors',controller.getAllDonors);
 router.post('/login',controller.login);
 router.post('/register',controller.register);
-
+router.post('/donor-request',controller.donorRequest);
+router.post('/patient-request',controller.patientRequest);
+router.post('/approve-donor',controller.approveDonor);
+router.post('/approve-patient',controller.approvePatient);
 
 module.exports = router;

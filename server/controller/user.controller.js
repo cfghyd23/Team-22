@@ -115,3 +115,69 @@ exports.getAllDonors = async (req, res) => {
             return res.status(500).send({message: err.message || "Error retrieving patients"})
         })
 }
+
+exports.donorRequest = async(req,res)=>{
+    if (!req.body) {
+        res.status(400).send({ message: "Cannot be empty!" });
+        return;
+    }
+
+    const {id} = req.body;
+    let oldUser = null;
+    await User.findByIdAndUpdate(id,{donor:1})
+        .then(data => {
+            oldUser = data;
+        });
+        if (!oldUser) return res.status(200).json({ success: false });
+        return res.status(200).json({...oldUser,success:true});
+}
+
+exports.patientRequest = async(req,res)=>{
+    if (!req.body) {
+        res.status(400).send({ message: "Cannot be empty!" });
+        return;
+    }
+
+    const {id} = req.body;
+    let oldUser = null;
+    await User.findByIdAndUpdate(id,{patient:1})
+        .then(data => {
+            oldUser = data;
+        });
+        if (!oldUser) return res.status(200).json({ success: false });
+        return res.status(200).json({...oldUser,success:true});
+}
+
+exports.approveDonor = async(req,res)=>{
+    if (!req.body) {
+        res.status(400).send({ message: "Cannot be empty!" });
+        return;
+    }
+
+    const {id} = req.body;
+
+    let oldUser = null;
+    await User.findByIdAndUpdate(id,{donor:2})
+    .then(data => {
+        oldUser = data;
+    });
+    if (!oldUser) return res.status(200).json({ success: false });
+        return res.status(200).json({...oldUser,success:true});
+}
+
+exports.approvePatient = async(req,res)=>{
+    if (!req.body) {
+        res.status(400).send({ message: "Cannot be empty!" });
+        return;
+    }
+
+    const {id} = req.body;
+
+    let oldUser = null;
+    await User.findByIdAndUpdate(id,{patient:2})
+    .then(data => {
+        oldUser = data;
+    });
+    if (!oldUser) return res.status(200).json({ success: false });
+        return res.status(200).json({...oldUser,success:true});
+}
