@@ -1,4 +1,4 @@
-let bloodBanks = require('../models/bb.model');
+let bloodBanks = require('../model/bb.model');
 const bcrypt = require('bcryptjs');
 
 exports.getAllBloodBanks = async (req, res) => {
@@ -69,7 +69,7 @@ exports.register = async (req, res) => {
         });
 }
 
-exports.getBloodbank = async (req,res)=>{
+exports.getBloodBank = async (req,res)=>{
     const {id} = req.params;
     const oldUser = null;
     await bloodBanks.findById(id)

@@ -32,6 +32,6 @@ const bloodBankSchema = new mongoose.Schema({
     Oneg: Number
 });
 
-const bloodBanks = new mongoose.model('bloodBanks',userSchema);
+const bloodBanks = new mongoose.model('bloodBanks',bloodBankSchema);
 
 module.exports = bloodBanks;

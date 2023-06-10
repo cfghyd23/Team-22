@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-// import axios from "axios"
+import axios from "axios";
 // import {useNavigate, Link} from "react-router-dom"
 
 export default function Form(){
@@ -23,22 +23,22 @@ export default function Form(){
 
   const submitRegister = async () => {
 
-    if(formData.password !== formData.confirmPass){
+    if(formData.Password !== formData.confirmPass){
         alert("Passwords do not match!");
         return;
     }
 
-    // await axios.post(`${URL}/users`, formData);
+    await axios.post(`${URL}/users`, formData);
 
     // history.push('/all-staff');
 
     console.log(formData);
 }
 
-  function handleSubmit(event){
-    event.prevenDefault();
-    submitRegister();
-  }
+  // function handleSubmit(event){
+  //   event.prevenDefault();
+  //   submitRegister();
+  // }
 
   const handleChange = (event) => {
     const {name, value} = event.target;
@@ -68,7 +68,7 @@ export default function Form(){
                     <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                     <label className="form-label" for="form3Example1c">Your Name</label>
-                      <input  name="name" type="text" id="form3Example1c" className="form-control" value={formData.name}/>
+                      <input name="name" type="text" id="form3Example1c" className="form-control" value={formData.name} onChange={handleChange}/>
                     </div>
                   </div>
 
@@ -76,7 +76,7 @@ export default function Form(){
                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                       <label className="form-label" for="form3Example3c">Your Email</label>
-                      <input name="email" type="email" id="form3Example3c" className="form-control" value={formData.email}/>
+                      <input name="email" type="email" id="form3Example3c" className="form-control" value={formData.email} onChange={handleChange}/>
                     </div>
                   </div>
 
@@ -84,7 +84,7 @@ export default function Form(){
                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                       <label className="form-label" for="form3Example3c">Mobile</label>
-                      <input name="mobile" type="number" id="form3Example31c" className="form-control" value={formData.mobile}/>
+                      <input name="mobile" type="number" id="form3Example31c" className="form-control" value={formData.mobile} onChange={handleChange}/>
                     </div>
                   </div>
 
@@ -92,7 +92,7 @@ export default function Form(){
                     <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                     <label className="form-label" for="form3Example4c">Password</label>
-                    <input name="Password" type="password" id="form3Example4c" className="form-control" value={formData.Password}/>
+                    <input name="Password" type="password" id="form3Example4c" className="form-control" value={formData.Password} onChange={handleChange}/>
                     </div>
                   </div>
 
@@ -100,7 +100,7 @@ export default function Form(){
                     <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                     <label className="form-label" for="form3Example4cd">Confirm password</label>
-                      <input name="confirmPass" type="password" id="form3Example4cd" className="form-control" value={formData.confirmPass}/>
+                      <input name="confirmPass" type="password" id="form3Example4cd" className="form-control" value={formData.confirmPass} onChange={handleChange}/>
                     </div>
                   </div>
 
@@ -125,7 +125,7 @@ export default function Form(){
                     <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                     <label className="form-label" for="form3Example4cd">Weight</label>
-                      <input name="weight" type="number" id="form3Example4cf" className="form-control" value={formData.weight}/>
+                      <input name="weight" type="number" id="form3Example4cf" className="form-control" value={formData.weight} onChange={handleChange}/>
                     </div>
                   </div>
 
@@ -133,7 +133,7 @@ export default function Form(){
                     <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                     <label className="form-label" for="form3Example4cd">DOB</label>
-                      <input name="dob" type="date" id="form3Example4cg" className="form-control" value={formData.dob}/>
+                      <input name="dob" type="date" id="form3Example4cg" className="form-control" value={formData.dob} onChange={handleChange}  />
                     </div>
                   </div>
 
