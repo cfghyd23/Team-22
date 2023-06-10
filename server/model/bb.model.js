@@ -21,5 +21,17 @@ const bloodBankSchema = new mongoose.Schema({
         validator: [isEmail, 'Invalide Email']},
     password: String,
     name:String,
-    Address: String
+    Address: String,
+    Aneg: Number,
+    Apos: Number,
+    Bneg: Number,
+    Bpos: Number,
+    ABpos: Number,
+    ABneg: Number,
+    Opos: Number,
+    Oneg: Number
 });
+
+const bloodBanks = new mongoose.model('bloodBanks',userSchema);
+
+module.exports = bloodBanks;

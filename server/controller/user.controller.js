@@ -59,7 +59,9 @@ exports.register = async (req, res) => {
         dob,
         bloodGroup,
         weight,
-        Gender
+        Gender,
+        donor: 0,
+        patient: 0
     });
 
     newUser.save()
