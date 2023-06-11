@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 export default function Login(){
 
     const URL = `http://localhost:${3001}`;
 
     const [formData, setFormData] = useState({email:'', Password:''});
-
+    const history = useHistory();
     const submitLogin = async () => {
       await axios.post(`${URL}/users/login`, formData)
     .then((res) => {
@@ -20,6 +21,7 @@ export default function Login(){
       }
     })
     .catch((err) => console.log(err.message));
+    history.push("/");
   }
 
   const handleChange = (event) => {
@@ -74,7 +76,7 @@ React.useEffect(() => {
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button type="button" className="btn btn-primary btn-lg" onClick={submitLogin}>Login</button>
                   </div>
-
+                  <div>Don't have an account? Register <a href="http://localhost:3000/register">here</a></div>
                 </form>
 
               </div>

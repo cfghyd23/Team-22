@@ -30,7 +30,7 @@ export default function Form(){
 
     await axios.post(`${URL}/users/register`, formData);
 
-    // history.push('/all-staff');
+    history.push('/');
 
     console.log(formData);
 }
@@ -56,7 +56,7 @@ export default function Form(){
     return(
         <div>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
-            <section className="vh-100" style={{backgroundColor: '#92a8d1'}}>
+            <section  style={{backgroundColor: '#92a8d1'}}>
   <div className="container h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-lg-12 col-xl-11">

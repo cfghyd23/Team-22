@@ -6,6 +6,16 @@ export default function Home(){
 
     const history = useHistory();
 
+    const handleLogin = () => {
+        if(localStorage.getItem("userId")){
+            localStorage.removeItem("userId");
+            window.location.assign("http://localhost:3000")
+        }
+        else{
+            history.push("/login");
+        }
+    }
+
     return(
         <div>
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel='stylesheet'></link>
@@ -19,10 +29,10 @@ export default function Home(){
             
             <div class="w3-right w3-hide-small">
             <a href="#about" class="w3-bar-item w3-button">About</a>
-            <a href="#projects" class="w3-bar-item w3-button">Blood Banks</a>
+            <a href="http://localhost:3000/blood-banks" class="w3-bar-item w3-button">Blood Banks</a>
             <a href="http://localhost:3000/donor-list" class="w3-bar-item w3-button">Looking for Blood</a>
-            <a href="#contact" class="w3-bar-item w3-button">Want to Donate</a>
-            <a href="#contact" class="w3-bar-item w3-button">Contact us</a>
+            <a href="http://localhost:3000/patient-list" class="w3-bar-item w3-button">Want to Donate</a>
+            <button onClick={handleLogin} class="w3-bar-item w3-button">{localStorage.getItem('userId') ? "Logout" : "Login"}</button>
             </div>
         </div>
         </div>
@@ -49,7 +59,7 @@ export default function Home(){
             <div class="w3-col l3 m6 w3-margin-bottom">
             <div class="w3-display-container">
                 <div class="w3-display-topleft w3-black w3-padding">&nbsp;&nbsp;Blood Donation Activities</div>
-                <img src="https://th.bing.com/th/id/R.92a0239228c3e6b9638845aeb8d0f8d6?rik=gTySexg5DfqkQg&riu=http%3a%2f%2findianredcrosswestbengal.org%2factivities%2fblood_donation_camps1.jpg&ehk=PDYIaOJp9fNbDHrjt%2bwtEon2L4CXx52l2tOq8quRpFo%3d&risl=&pid=ImgRaw&r=0" alt="House" style={{width:'100%'}}></img>
+                <img src="./img.jpg" style={{width:'100%'}}></img>
            <p>Blood drives are organized events where individuals can donate blood. 
             These events are usually set up at community centers, schools, workplaces, or mobile donation centers. 
             Donor recruitment programs involve actively seeking out potential blood donors through targeted outreach efforts</p>
