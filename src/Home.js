@@ -1,6 +1,11 @@
 import React from "react";
 import Photo from'./homepage.png';
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
 export default function Home(){
+
+    const history = useHistory();
+
     return(
         <div>
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel='stylesheet'></link>
@@ -13,9 +18,9 @@ export default function Home(){
             <a href="#home" class="w3-bar-item w3-button"><b>Blood</b>Warriors</a>
             
             <div class="w3-right w3-hide-small">
-            <a href="#projects" class="w3-bar-item w3-button">About</a>
-            <a href="#about" class="w3-bar-item w3-button">Blood Banks</a>
-            <a href="#contact" class="w3-bar-item w3-button">Looking for Blood</a>
+            <a href="#about" class="w3-bar-item w3-button">About</a>
+            <a href="#projects" class="w3-bar-item w3-button">Blood Banks</a>
+            <a href="http://localhost:3000/donor-list" class="w3-bar-item w3-button">Looking for Blood</a>
             <a href="#contact" class="w3-bar-item w3-button">Want to Donate</a>
             <a href="#contact" class="w3-bar-item w3-button">Contact us</a>
             </div>
