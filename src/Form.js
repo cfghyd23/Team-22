@@ -29,8 +29,8 @@ export default function Form(){
     }
 
     await axios.post(`${URL}/users/register`, formData);
-
-    history.push('/');
+    alert("Registeration successful")
+    history.push('/login');
 
     console.log(formData);
 }

@@ -1,7 +1,7 @@
 import React from "react";  
 
 export default function UserCard(props){
-    const {admin, handleReject, handleApprove, user} = props;
+    const {admin, handleReject, handleAccept, user} = props;
     const map = {
         Apos: "A+",
         Aneg: "A-",
@@ -23,9 +23,9 @@ export default function UserCard(props){
             <footer class="blockquote-footer"><cite title="Source Title">Age - {user.mobile}</cite></footer>
 
         </div>
-      {admin && <button className="btn btn-danger mr-3 ml-2" onClick={handleReject}>Reject</button>}
+      {admin && <button className="btn btn-danger mr-3 ml-2" onClick={() => handleReject(user.mobile)}>Reject</button>}
       &nbsp;&nbsp;&nbsp;
-      {admin && <button className="btn btn-success mx-auto"  onClick={handleApprove}>Approve</button>}
+      {admin && <button className="btn btn-success mx-auto"  onClick={() => handleAccept(user._id)}>Approve</button>}
     </blockquote>
   </div>
     )

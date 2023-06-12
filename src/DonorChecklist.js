@@ -1,6 +1,13 @@
 import React from "react";
+import axios from "axios"
+import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 export default function DonorChecklist(){
+    const history = useHistory()
+    const handleClick = async () => {
+        await axios.post(`http://localhost:3001/users/donor-request`, {id: localStorage.getItem("userId")})
+        history.push('/');
+    }
     return(
         <div>
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link> 
@@ -29,7 +36,7 @@ export default function DonorChecklist(){
         <label for="checklist5">Not received a blood transfusion in the past 6 months</label><br></br>
         
         
-        <input type="submit" value="Submit Request"></input>
+        <input type="button" value="Submit Request" onClick={handleClick}></input>
     </form>
     </div>
     </center>

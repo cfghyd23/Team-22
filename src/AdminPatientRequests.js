@@ -9,19 +9,19 @@ export default function DonorList(){
 
     const URL = `http://localhost:${3001}`;
 
-    const handleAccept = async (mobile) => {
-        await axios.post(`${URL}/approve-patient`, {mobile});
+    const handleAccept = async (id) => {
+        await axios.post(`${URL}/approve-patient`, {id});
     }
 
-    const handleReject = async (mobile) => {
-        await axios.post(`${URL}/remove-patient`, {mobile});
+    const handleReject = async (id) => {
+        await axios.post(`${URL}/remove-patient`, {id});
     }
 
     React.useEffect(() => {
         axios.get(`${URL}/users`)
             .then(res => {
                 setCards(() => {
-                    return res.data.filter(user => user.donor == 1)
+                    return res.data.filter(user => user.patient == 1)
                         .map(user => (<UserCard user={user} admin={true} handleAccept={handleAccept} handleReject={handleReject}/>))
                 })
             })

@@ -20,7 +20,7 @@ export default function UserCard(props){
             <footer class="blockquote-footer"><cite title="Source Title">Email ID - {user.email}</cite></footer>
             <footer class="blockquote-footer"><cite title="Source Title">Blood Group - {map[user.bloodGroup]}</cite></footer>
             <footer class="blockquote-footer"><cite title="Source Title">Sex - {user.sex}</cite></footer>
-            <footer class="blockquote-footer"><cite title="Source Title">Age - {user.mobile}</cite></footer>
+            <footer class="blockquote-footer"><cite title="Source Title">Mobile - {user.mobile}</cite></footer>
 
         </div>
       {admin && <button className="btn btn-danger">Delete</button>}

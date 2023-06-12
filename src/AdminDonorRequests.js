@@ -9,12 +9,13 @@ export default function DonorList(){
 
     const URL = `http://localhost:${3001}`;
 
-    const handleAccept = async (mobile) => {
-        await axios.post(`${URL}/approve-donor`, {mobile});
+    const handleAccept = async (id) => {
+        console.log("Accepted");
+        await axios.post(`${URL}/users/approve-donor`, {id});
     }
 
-    const handleReject = async (mobile) => {
-        await axios.post(`${URL}/remove-donor`, {mobile});
+    const handleReject = async (id) => {
+        await axios.post(`${URL}/users/remove-donor`, {id});
     }
 
     React.useEffect(() => {
